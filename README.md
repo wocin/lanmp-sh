@@ -1,6 +1,24 @@
 lanmp-sh
 ========
-This is about LANMP shell script.
+This is about shell script.
+
+Include:
+
+nginx 
+
+mysql 
+
+php 
+
+memcached 
+
+varnish 
+
+redis 
+
+mongodb 
+
+...
 
 If you think this doc works for you,so use it.
 
