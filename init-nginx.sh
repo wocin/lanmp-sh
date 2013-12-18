@@ -155,4 +155,5 @@ exit $RETVAL
 chmod +x /etc/init.d/nginx
 chkconfig --add nginx
 chkconfig nginx on
+chown nginx /usr/local/nginx -R
 #-------------------I am boring line------------------------------------
