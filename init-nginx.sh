@@ -21,7 +21,7 @@ cd /usr/local/lnmp/
 wget http://nginx.org/download/nginx-1.5.8.tar.gz
 tar xvf nginx-1.5.8.tar.gz
 cd /usr/local/lnmp/nginx-1.5.8
-sed -i 's/#define NGINX_VERSION      "1.5.8"/#define NGINX_VERSION      "1.0.0"/' src/core/nginx.h
+sed -i 's/#define NGINX_VERSION      "1.5.8"/#define NGINX_VERSION      "1.1.11"/' src/core/nginx.h
 ./configure	--prefix=/usr/local/nginx --with-pcre=/usr/local/lnmp/pcre-8.34 --with-http_stub_status_module \
 --with-http_ssl_module --with-http_flv_module --with-http_dav_module \
 --with-http_gzip_static_module --with-debug --user=nginx --group=nginx 
