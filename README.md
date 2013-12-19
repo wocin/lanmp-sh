@@ -6,17 +6,7 @@ Include:
 
 nginx 
 
-mysql 
-
-php 
-
-memcached 
-
-varnish 
-
-redis 
-
-mongodb 
+vim
 
 ...
 
