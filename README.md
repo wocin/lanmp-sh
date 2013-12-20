@@ -1,15 +1,11 @@
 lanmp-sh
 ========
-This is about shell script.
+cut-nginx-log.sh（分割nginx日志）
 
-Include:
+init-nginx.sh（安装nginx，WEB环境）
 
-nginx 
+init-system.sh（初始化系统）
 
-vim
+init-vim-env.sh（初始化VIM环境，python和路径自动补齐和分割树等）
 
-...
-
-If you think this doc works for you,so use it.
-
-For me,is the record.:)
+watch-out-nginx.txt（关于nginx的一些安全事项）
