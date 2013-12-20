@@ -1,0 +1,33 @@
+以下注意项目，为了更好的nginx安全
+1.将每个~ .php$请求转递给PHP
+  1.1如果没找到文件时使用try_files和only(在所有的动态执行情况下都应该注意) 将它转递给运行PHP的FCGI进程
+  1.2确认php.ini文件中cgi.fix_pathinfo设置为0 (cgi.fix_pathinfo=0)  这样确保PHP检查文件全名
+    (当它在文件结尾没有发现.php它将忽略) 
+  1.3修复正则表达式匹配不正确文件的问题   现在正则表达式认为任何文件都包含".php"
+    在站点后加“if”确保只有正确的文件才能运行   将/location ~ .php$和location ~ ..*/.*.php$都设置为return 403;
+
+2.禁用autoindex模块  这个可能在你使用的Nginx版本中已经更改了
+  如果没有的话只需在配置文件的location块中增加autoindex off;声明即可
+  
+3.禁用服务器上的ssi (服务器端引用)   这个可以通过在location块中添加ssi off;
+
+4.关闭服务器标记。如果开启的话（默认情况下）所有的错误页面都会显示服务器的版本和信息
+  将server_tokens off;声明添加到Nginx配置文件来解决这个问题
+  
+5.在配置文件中设置自定义缓存以限制缓冲区溢出攻击的可能性
+  client_body_buffer_size  1K;
+  client_header_buffer_size 1k;
+  client_max_body_size 1k;
+  large_client_header_buffers 2 1k;
+  
+6.将timeout设低来防止DOS攻击。所有这些声明都可以放到主配置文件中
+  client_body_timeout   10;
+  client_header_timeout 10;
+  keepalive_timeout     5 5;
+  send_timeout          10;
+  
+7.限制用户连接数来预防DOS攻击
+  limit_zone slimits $binary_remote_addr 5m;
+  limit_conn slimits 5;
+  
+8.
