@@ -7,6 +7,7 @@ mkdir /usr/local/php/tmp
 chmod 777 /usr/local/php/tmp
 cd /usr/local/lnmp/
 wget http://cn2.php.net/distributions/php-5.5.1.tar.gz
+tar xvf php-5.5.1.tar.gz
 cd /usr/local/lnmp/php-5.5.1
 ./configure --prefix=/usr/local/php --with-mysql --with-mysqli \
 --enable-xml --enable-bcmath --enable-fastcgi --enable-fpm --enable-zip  \
