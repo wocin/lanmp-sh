@@ -5,6 +5,7 @@
 mkdir /backup/redis/ -p
 cd /usr/local/lnmp/
 wget http://download.redis.io/releases/redis-2.6.14.tar.gz
+tar xvf redis-2.6.14.tar.gz
 cd /usr/local/lnmp/redis-2.6.14
 make
 cd src 
