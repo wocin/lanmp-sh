@@ -95,6 +95,6 @@ chmod 700 /usr/bin/whereis /sbin/ifconfig /usr/bin/pico /usr/bin/vi /usr/bin/vim
 chmod 700 /usr/bin/which /bin/rpm /usr/bin/gcc /usr/bin/make
 #-------------------I am boring line------------------------------------
 cd /root
-git clone git clone https://github.com/wocin/z.git
+git clone https://github.com/wocin/z.git
 echo "source /root/z/z.sh" >> /etc/bashrc
 source /etc/bashrc
